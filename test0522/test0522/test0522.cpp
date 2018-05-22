@@ -27,27 +27,27 @@ public:
 		inch = (feet - (int)feet) * 12;
 		cout << "f=" << feet << "i=" << inch << endl;
 	}
-	void import()
+	void import(double inch1,double feet1)
 	{
 		inch2 = inch + inch1;
 		if (inch2 >= 12)
 		{
-			a = inch2 / 12;
-			inch3 = inch2 - a;
+			(int)a = inch2 / 12;
+			inch3 = inch2 - (int)a*12;
+			feet2 = feet + feet1 + (int)a;
+			cout << "f=" << feet2 << "i=" << inch3 << endl;
 		}
-		feet2 = feet + feet1 + a;
-		cout << "f=" << feet2 << "i=" << inch3 << endl;
 	}
 	void display()
 	{
-		cout << "f=" << feet << "i=" << inch << endl;
+		cout << "f=" << feet2 << "i=" << inch3 << endl;
 	}
 };
 int main()
 {
 	Clength oc;
 	oc.setvalue(10);
-	oc.import();
+	oc.import(12,20);
 	oc.display();
 	return 0;
 }
